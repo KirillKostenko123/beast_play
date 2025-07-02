@@ -61,6 +61,8 @@ o Интерфейс, к которому подключен BR-RTR, подкл�
 172.16.5.0/28 
 o На ISP настройте динамическую сетевую трансляцию в сторону 
 HQ-RTR и BR-RTR для доступа к сети Интернет 
+echo "172.16.4.1/28" > /etc/net/ifaces/enp6s19/ipv4address
+echo "172.16.5.1/28" > /etc/net/ifaces/enp6s19/ipv4address
 
 Cделано
 
@@ -105,6 +107,9 @@ TYPE=ovsport
 BRIDGE=HQ-SW
 VID=100 200 999
 BOOTPROTO = static
+echo "192.168.100.1/26" > /etc/net/ifaces/vlan100/ipv4address
+echo "192.168.100.65/28" > /etc/net/ifaces/vlan200/ipv4address
+echo "192.168.100.81/29" > /etc/net/ifaces/vlan999/ipv4address
 
 mkdir /etc/net/ifaces/HQ-SW
 vim /etc/net/ifaces/HQ-SW/options
